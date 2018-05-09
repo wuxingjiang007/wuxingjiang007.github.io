@@ -1,0 +1,42 @@
+---
+layout: post
+title:  "jekyll测试"
+date:   2018-05-09 11:08:23 +0800
+categories: jekyll update
+---
+ hello 我亲爱的朋友们！你好啊，
+ 额！貌似没有自动更新！！！
+ 好吧！不更新也没有关系，下面来写第一篇吧，嘻嘻><!><
+
+
+好吧先来看看怎么让jekyll在本地跑起来啦
+在命令行运行：
+{% highlight bash %}
+  bundle exec jekl serve
+{% endhighlight %}
+或者
+
+{% highlight bash %}
+  jekl serve
+{% endhighlight %}
+至于这两者有什么区别，我目前有什么区别，我还不知道哦。
+
+
+至于Jekyll是个什么东西，他们的官网上是这样说的：
+
+Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个模版目录，其中包含原始文本格式的文档，通过一个转换器（如 Markdown）和我们的 Liquid 渲染器转化成一个完整的可发布的静态网站，你可以发布在任何你喜爱的服务器上。Jekyll 也可以运行在 GitHub Page 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的
+
+以下是一个获取最简单 Jekyll 模板并生成静态页面并运行的例子。
+
+{% highlight bash %}
+~ $ gem install jekyll
+~ $ jekyll new myblog
+~ $ cd myblog
+~/myblog $ jekyll serve
+# => Now browse to http://localhost:4000
+{% endhighlight %}
+如果你希望把 jekyll 安装到当前目录，你可以运行 jekyll new . 来代替。如果当前目录非空，你还需要增添 --force 参数，所以命令应为 jekyll new . --force。
+
+就是这么简单。从现在开始，你可以通过创建文章、改变头信息来控制模板和输出、修改 Jekyll 设置来使你的站点变得更有趣～
+
+好啦，今天就到这里啦。要睡觉啦
