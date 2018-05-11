@@ -1,0 +1,61 @@
+---
+layout: post
+title:  "初识svg（一）"
+date:   2018-05-11 11:08:23 +0800
+categories: jekyll update
+---
+
+# svg特性
+
+- 矢量图
+- xml程序
+
+# 基本形状总结
+
+
+## 基本元素
+
+|形状|描述|
+|---|----|
+|```<line x1="startx" x2="endx" y1="starty" y2="endy"></line>```|从起点坐标（startx,starty）画一条直线到（endx,endy）|
+|```<rect x="leftx" y="topy" width="width" height="height"></rect>```|从指定坐标（leftx,topy）开始画一个宽度为width，高度为height的矩形|
+|```<circle cx="centerx" cy="centery" r="radius"></circle>```|画一个以radius为半径的圆，圆心位于（centerx, centery）|
+|```<ellipse cx="centerx" cy="centery" rx="radiusx" ry="radiusy" ></ellipse>```|画一个x方向半径为radiusx，y方向半径为radiusy的圆，圆心位于（centerx，centery）|
+|```<polyline point="points-list"></polyline>```|画一系列相连的折线，转折点有points-list指定，它由一系列x/y的坐标组成，这些数值只能使用用户坐标，而不能添加长度单位|
+
+## 指定颜色
+* none： 表示不会只轮廓，或者不为形状填充颜色
+* 基本颜色名称： aqua，black，blue，fuchisa，gray，green，lime，
+maroon，navy，oline，purple，red，silver，teal，white，yellow。
+* SVG规定的扩展颜色名称（http://www.w3.org/TR/SVG/types.html#ColorKeywords）.
+* 6为十六进制数字，如：#rrggbb，从前往后，每两位分别是（红，绿，蓝）
+* 3为十六进制的数字，如： #rgb， 三位数字分别表示（红，绿，蓝）
+* rgb(r,g,b),每个值的范围为（0-255）或者（0%-100%）。
+* currentcolor， 来自元素的color属性，一般是继承的。
+* css3颜色模块W3C规定的其他方法。
+
+### 笔画和填充特性
+* 笔画特性
+<style>
+table th:first-of-type {
+    width: 200px;
+}
+</style>
+
+|属性|值|
+|---|--|
+|stroke|笔画颜色，默认值是none|
+|stroke-width|笔画宽度，可用用户坐标或者指定单位的方式指定，笔画的宽度会相对坐标网格线居中，默认的宽度是1。|
+|stroke-opaticy|笔画透明度，数字从0到1，默认1。|
+|stroke-dasharray|用一系列数字来指定虚线个间隙的长度，这些数字只能是用户坐标，默认值是none。|
+|stroke-linecap|线头尾的形状， 值为butt（默认住）、round或square。|
+|stroke-linejoin| 图形的棱角或者一些列连线的形状，取值为miter（尖的，默认值）、round（圆的）或者bevel（平的）|
+|stroke-miterlimit| 相交处显示宽度与线宽的最大比例，默认值为4|
+
+* 填充特性
+
+|属性|值|
+|--------|--|
+|fill| 指定填充颜色，默认值是black|
+|fill-opacity|指定填充透明度，默认只是1，取值范围（0-1）|
+|fill-rule|属性值为nonzero（默认值）或者evenodd。该属性决定判断某个点是否在图形内部的方法，只有当边线交叉时或者内部有个洞时才有效。|
